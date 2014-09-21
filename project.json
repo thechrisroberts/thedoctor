@@ -1,0 +1,95 @@
+{
+	"name": "TheDoctor",
+	"description": "For tracking Doctor Who.",
+	"paths": {
+		"root": "public",
+		"assets": "assets"
+	},
+	"style": {
+		"core": {
+			"buttons": true,
+			"code": true,
+			"forms": true,
+			"print": true,
+			"tables": true,
+			"responsive": {
+				"enable": true,
+				"fallback": 4,
+				"offset": 25,
+				"breakpoints": {
+					"mobileLandscape": 480,
+					"tabletPortrait": 768,
+					"desktopSmall": 1024,
+					"desktopMedium": 1280,
+					"desktopLarge": 1440
+				}
+			}
+		},
+		"build": [
+
+		],
+		"compile": {
+			"ie8.css": [
+				"../wee/style/wee.legacy.less",
+				"custom/ie8.less"
+			]
+		}
+	},
+	"script": {
+		"core": {
+			"enable": true,
+			"features": {
+				"assets": true,
+				"chain": true,
+				"data": true,
+				"dom": true,
+				"events": true,
+				"routes": true,
+				"screen": true
+			}
+		},
+		"build": [
+
+		],
+		"compile": {
+			"ie8.min.js": [
+				"polyfill/es5-shim.js",
+				"polyfill/html5shiv.js",
+				"polyfill/sizzle.js",
+				"polyfill/wee.rem.js",
+				"polyfill/wee.svg.js",
+				"custom/ie8.js"
+			],
+			"ie9.min.js": [
+				"polyfill/wee.slice.js",
+				"polyfill/wee.placeholder.js"
+			]
+		},
+		"sourceMaps": true
+	},
+	"server": {
+		"ghostMode": true,
+		"port": 3000,
+		"reload": {
+			"enable": true,
+			"watch": {
+				"root": true,
+				"paths": [
+
+				],
+				"extensions": [
+					"html"
+				]
+			}
+		},
+		"tasks": {
+			"local": {
+				"proxy": "thedoctor.coderfaire"
+			},
+			"static": {
+				"host": "auto",
+				"https": false
+			}
+		}
+	}
+}
